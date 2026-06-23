@@ -1,0 +1,17 @@
+2.3 作业模块复用说明
+-----------------------
+本程序直接复用了 2.3 作业中的以下模块（函数名相同）：
+- read_input_from_dict()
+- generate_LM()
+- element_stiffness_1D() / 2D()
+- assemble_global_stiffness()
+- reduce_system()      # 原 reduce_system 改名为 reduce_system，用于生成缩减方程
+- postprocess_1D() / 2D()
+
+替换的模块：
+- 原求解部分（使用 numpy.linalg.solve）被本作业的 solve_equilibrium() 替代，
+  该函数内部调用 ldlt_factor() 和 ldlt_solve() 或 spsolve()。
+
+衔接方式：
+- 程序从 2.3 的 JSON 输入文件读取数据，完成组装后，将缩减矩阵 K_FF 和 rhs 传递给本作业的求解器。
+- 求解后返回 d_F，再调用 2.3 的后处理模块计算应力和反力。

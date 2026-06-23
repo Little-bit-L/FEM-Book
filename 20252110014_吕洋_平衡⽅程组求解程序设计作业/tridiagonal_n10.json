@@ -1,0 +1,6 @@
+{
+  "Title": "三对角对称正定矩阵 n=10",
+  "n": 10,
+  "K": "generated_by_script",   // 可省略，程序自动生成
+  "R": "generated_by_script"
+}

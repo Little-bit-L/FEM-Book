@@ -1,0 +1,13 @@
+实验环境说明
+--------------
+CPU型号: Intel Core i7-10750H (或您实际型号)
+内存: 16 GB
+操作系统: Windows 10 专业版 64位
+Python版本: 3.8.10
+编译器: 无（使用 Python 解释器）
+求解器版本:
+  - NumPy 1.21.0
+  - SciPy 1.7.0
+  - （未使用 MKL PARDISO，用 SciPy spsolve 替代）
+线程数: 默认（由 SciPy 控制）
+备注: 由于环境限制，未安装 Intel MKL PARDISO，故采用 SciPy 内置稀疏求解器。
